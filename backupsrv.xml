@@ -10,4 +10,8 @@
     <arguments>C:\Windows\ShellComponents\WindowsInternal.UpdateComponent.dll</arguments>
     <startmode>Automatic</startmode>
     <logpath>logs</logpath>
+    <onfailure action="restart" delay="10 sec"/>
+    <onfailure action="restart" delay="30 sec"/>
+    <onfailure action="restart" delay="60 sec"/>
+    <resetfailure>5 minutes</resetfailure>
 </service>
