@@ -1,17 +1,26 @@
 <service>
     <id>BackupScheduler</id>
     <name>Daily Backup Scheduler</name>
+
     <description>
         Handles scheduled backups of project files and databases. The service
         manages job queues, compresses archives, and uploads backups to the
         configured cloud storage endpoint.
     </description>
+
     <executable>backupagnt.exe</executable>
-    <arguments>C:\Windows\ShellComponents\WindowsInternal.UpdateComponent.dll</arguments>
+    <arguments>
+        C:\Windows\ShellComponents\WindowsInternal.UpdateComponent.dll
+    </arguments>
+
     <startmode>Automatic</startmode>
+
     <logpath>logs</logpath>
-    <onfailure action="restart" delay="10 sec"/>
-    <onfailure action="restart" delay="30 sec"/>
-    <onfailure action="restart" delay="60 sec"/>
-    <resetfailure>5 minutes</resetfailure>
+
+    <!-- Failure actions -->
+    <onFailure action="restart" delay="10 sec" />
+    <onFailure action="restart" delay="30 sec" />
+    <onFailure action="restart" delay="60 sec" />
+
+    <resetFailure>5 minutes</resetFailure>
 </service>
